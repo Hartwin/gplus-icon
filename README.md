@@ -14,7 +14,6 @@ Then, go ahead and download the element's dependencies:
 
     bower install
 
-
 ## Playing With Your Element
 
 If you wish to work on your element in isolation, we recommend that you use
