@@ -1,6 +1,6 @@
 # gplus-icon
 
-An element providing a starting point for your own reusable Polymer elements.
+An element to display a google plus icon using a paper-icon-button.
 
 
 ## Dependencies
