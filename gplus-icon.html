@@ -1,0 +1,95 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+
+<!--
+Display a google plus icon using a paper-icon-button.
+
+Example:
+
+    <gplus-icon></gplus-icon>
+
+@demo demo/index.html
+-->
+
+<dom-module id="gplus-icon">
+  <template>
+    <a alt="[[alt]]" href="[[href]]"><paper-icon-button src="[[src]]"></paper-icon-button></a>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'gplus-icon',
+
+    properties: {
+
+      /**
+       * The URL of an image for the icon. If the src property is specified,
+       */
+      src: {
+        type: String,
+        computed: 'computeSrc(size)'
+      },
+
+      /**
+      * Specifies the css class and therefore the size of the paper-icon-button
+       */
+      class: {
+        type: String,
+        computed: 'computeClass(size)'
+      },
+
+      /**
+       * Specifies the url to the Google+ profile
+       */
+      href: {
+        type: String
+      },
+
+      /**
+       * Specifies the alternate text for the button, for accessibility.
+       */
+      alt: {
+        type: String,
+        value: 'Google+'
+      },
+
+      /**
+       * Specifies the size of the icon.
+       * Possible sizes are:
+       * small
+       * medium
+       * large
+       */
+      size: {
+        type: String,
+        value: 'medium'
+      }
+    },
+
+    /**
+     * Returns the src url of the Google+ icon dependent of the size.
+     */
+    computeSrc: function(size){
+      urls = {
+        small: '//ssl.gstatic.com/images/icons/gplus-16.png',
+        medium: '//ssl.gstatic.com/images/icons/gplus-32.png',
+        large: '//ssl.gstatic.com/images/icons/gplus-64.png'
+      };
+      return urls[size]
+    },
+  });
+
+</script>
